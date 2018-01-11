@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+
+
+</style>
+
+<h2>Index</h2>
+<input type="button" name="name" value="PersonelleriGetir" id="btnPErsonel" />
+<script src="../js/vendor/jquery-3.2.1.min.js"></script>
+<ul id="personeller">
+
+
+
+</ul>
+
+<script>
+    $(document).ready(function () {
+
+        $('#btnPErsonel').on('click', function () {
+            $.ajax({
+
+                type: 'GET',
+                url: 'http://localhost:9090/ajax-demo/personel',
+                crossDomain:true,
+                contentType: 'application/json;charset=utf-8',
+                success: function (data) {
+                    console.log(data);
+                    $.each(data, function (index, element) {
+                        var mesaj = $('<li>' + element.ad +' ' + element.soyAd + '</li>');
+                        $('#personeller').append(mesaj);
+
+                    });
+
+                },
+                error: function (hata) {
+                    console.log("Hata" + hata);
+                    var mesaj = $('<li>' + hata.statusText + '</li>');
+                    $('personeller').append(mesaj);
+
+                }
+
+            });
+
+            $('#personeller').fadeIn('slow');
+
+        });
+    });
+
+
+</script>
+
+
+
+</body>
+</html>
+
+
+

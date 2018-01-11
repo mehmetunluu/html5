@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <style>
+        .bolge {
+            width: 200px;
+            height: 400px;
+            border-radius: 20px;
+            background-color: #27df24;
+            float: left;
+            margin: 25px;
+        }
+
+        .secili {
+            width: 200px;
+            height: 400px;
+            border-radius: 20px;
+            background-color: silver;
+            float: left;
+            margin: 25px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        button {
+            width: 100%;
+            background-color: red;
+            color: white;
+            font-weight: bold;
+        }
+
+        .yorumlar {
+            display: none;
+        }
+
+        .plan {
+            background-color: orange;
+            border: 1px solid black;
+        }
+
+        .animasyon {
+            /**
+            plan ile ayni amac icin olcak
+             */
+            background-color: orange;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+<div id="filtreler">
+    <button class="aktif">Aktif Satışlar</button>
+    <button class="pasif">Pasif Satışlar</button>
+
+</div>
+<div id="tatil">
+    <ul>
+        <li class="bolge" data-fiyat="1500">
+
+            <a href="#">content</a>
+            <h2>Karadeniz Turu</h2>
+            <ul class="yorumlar">
+                <li>Harika</li>
+                <li>Müthiş</li>
+            </ul>
+            <button>Fiyat</button>
+        </li>
+        <li class="bolge pasif" data-fiyat="1800">
+
+            <a href="#">content</a>
+            <h2>Ege Turu</h2>
+            <ul class="yorumlar">
+                <li>Harika</li>
+                <li>Müthiş</li>
+            </ul>
+            <button>Fiyat</button>
+        </li>
+        <li class="bolge aktif" data-fiyat="2000">
+
+            <a href="#">content</a>
+            <h2>GAP Turu</h2>
+            <ul class="yorumlar">
+                <li>Harika</li>
+                <li>Müthiş</li>
+            </ul>
+            <button>Fiyat</button>
+        </li>
+        <li class="bolge aktif" data-fiyat="2000">
+
+            <a href="#">content</a>
+            <h2>GAP Turu</h2>
+            <ul class="yorumlar">
+                <li>Harika</li>
+                <li>Müthiş</li>
+            </ul>
+            <button>Fiyat</button>
+        </li>
+        <li class="bolge aktif" data-fiyat="2000">
+
+            <a href="#">content</a>
+            <h2>GAP Turu</h2>
+            <ul class="yorumlar">
+                <li>Harika</li>
+                <li>Müthiş</li>
+            </ul>
+            <button>Fiyat</button>
+        </li>
+        <li class="bolge aktif" data-fiyat="2000">
+
+            <a href="#">content</a>
+            <h2>GAP Turu</h2>
+            <ul class="yorumlar">
+                <li>Harika</li>
+                <li>Müthiş</li>
+            </ul>
+            <button>Fiyat</button>
+        </li>
+        <li class="bolge aktif" data-fiyat="2000">
+
+            <a href="#">content</a>
+            <h2>GAP Turu</h2>
+            <ul class="yorumlar">
+                <li>Harika</li>
+                <li>Müthiş</li>
+            </ul>
+            <button>Fiyat</button>
+        </li>
+    </ul>
+</div>
+<script src="../js/vendor/jquery-3.2.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.bolge').on('click', 'button', function () {
+            var bolge = $(this).closest('.bolge');
+            var deger = bolge.data('fiyat');
+            var fiyat = $('<p>' + deger + '</p>');
+            //$('.bolge').append(fiyat);
+            //$(this).after(fiyat);
+            //alternatif:
+            //fiyat.appendTo($('.bolge'));
+            bolge.append(fiyat);
+            $(this).remove();
+
+        });
+
+        $('#filtreler').on('click', '.aktif', function () {
+            $('.secili').removeClass('secili');
+            $('.bolge').filter('.aktif').addClass('secili');
+        });
+        $('#filtreler').on('click', '.pasif', function () {
+            $('.secili').removeClass('secili');
+            $('.bolge').filter('.pasif').addClass('secili');
+        });
+        <!--  tiknalindiginda baska yere gitmesini engelleyecek-->
+        $('.bolge').on('click', '.goster', function (event) {
+            event.preventDefault();
+            <!-- link gibi gozuk ama link gibi davranma demek  -->
+            /**
+             * olayin içinde buunduğu elementten yukarı dogru firlamasini istemiyorsak
+             */
+            event.stopPropagation();
+            $(this).closest('.bolge').find('.yorumlar').fadeToggle();
+        });
+        $('#tatil').on('click', '.bolge', function () {
+            // $(this).css({
+            //     'background-color': 'orange',
+            //     'border': '1px solid black'
+            // });
+
+
+            $(this).toggleClass('animasyon');// toogle varsa kaldirir yoksa ekler
+            // $(this).animate({'top': '-20px'}, "slow");
+            if ((this).hasClass('animasyon')) {
+                $(this).animate({'top': '-20px !important'}, "slow");
+            } else {
+                $(this).animate({'top': '0px !important'}, "slow");
+            }
+
+
+        });
+    });
+</script>
+</body>
+</html>

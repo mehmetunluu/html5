@@ -1,0 +1,77 @@
+<!--
+
+gecis icib kullanilan bir css
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .veri {
+            background-color: silver;
+            border: 2px solid blue;
+            padding: 15px;
+            -webkit-transition: color 3s, background-color 2s;
+            -o-transition: color 3s, background-color 2s;
+            -moz-transition: color 3s, background-color 2s;
+            transition: color 3s, background-color 2s;
+        }
+
+        .veri:hover {
+            color: red;
+            background-color: black;
+            font-weight: bold;
+        }
+
+        .adres {
+            background-color: silver;
+            border: 2px solid blue;
+            padding: 15px;
+            width: 300px;
+            height: 300px;
+            min-width: 300px;
+            min-height: 300px;
+            animation: anime 3s infinite;
+        }
+
+        @keyframes anime {
+            0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(90deg);
+            }
+            50% {
+                transform: rotate(180deg);
+            }
+            75% {
+                transform: rotate(270deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="veri">
+    <address>
+        Üsküdar<br/>
+        İstabul<br/>
+    </address>
+</div>
+
+
+<div class="adres">
+    <address>
+        Üsküdar<br/>
+        İstabul<br/>
+    </address>
+</div>
+
+</body>
+</html>

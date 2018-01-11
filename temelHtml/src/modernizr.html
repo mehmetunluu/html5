@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../jQueryIntro/js/vendor/modernizr-3.5.0.min.js"></script>
+</head>
+<body>
+
+<table>
+
+</table>
+
+<span id="sonuc"></span>
+
+<script>
+    if (Modernizr.video) {
+        document.getElementById("#sonuc").innerText = 'Destekliyor';
+        alert('destekliyor')
+    } else {
+        document.getElementById("#sonuc").innerText = 'Desteklemiyor';
+        alert('Desteklemiyor')
+
+    }
+
+    function yukTesti() {
+        Modernizr.load({
+            test: Modernizr.draganddrop,
+            yep: 'xxx.js',
+            nope: 'yyy.js'
+
+        });
+    }
+</script>
+
+</body>
+</html>

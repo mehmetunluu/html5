@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bilet Detaylari</title>
+    <style>
+
+        .ucus {
+            display: none;
+            list-style: circle;
+        }
+    </style>
+</head>
+<body>
+
+<ul>
+    <li class="onay" data-fiyat="200">
+
+        <h2>Bilgileriniz</h2>
+        <p>Karadeniz Turu 10.01.2016</p>
+        <p>200 TL</p>
+        Biletler
+        <input type="number" name="name" value="1" min="1" step="1">
+        <button> Uçuş Detayları</button>
+        <ul class="ucus">
+            <li>THY</li>
+            <li>Atatürk Havalimanı</li>
+            <li>23C</li>
+        </ul>
+    </li>
+</ul>
+
+<p>
+    Toplam Fiyat: <span id="toplam">0</span>
+</p>
+<script src="../js/vendor/jquery-3.2.1.min.js"></script>
+
+<script>
+    // $(document).ready(function () {
+    //     $('.onay').on('click', 'button', function () {
+    //         $(this).closest('.onay').find('.ucus').fadeToggle("slow");
+    //     })
+    // });
+
+    $(document).ready(function () {
+        $('.onay').on('click', 'button', biletiGoster);
+        $('.onay').on('mouseenter', 'button', biletiGoster);
+        $('#num').on('change', function () {
+            var fiyat = +$(this).closest('.onay').data('fiyat');
+            var adet = +$(this).val();
+            $('#toplam').text(fiyat * adet);
+
+        })
+
+    });
+
+    function biletiGoster() {
+        $(this).closest('.onay').find('.ucus').fadeToggle("slow");
+    }
+
+</script>
+
+</body>
+
+</html>

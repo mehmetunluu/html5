@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Game</title>
+</head>
+<body>
+
+<canvas id="oyun" width="1024"></canvas>
+<input type="button" name="name" value="Top Ekle" onclick="topEkle()">
+
+<script>
+
+    function Top(x, y, dx, dy, radius) {
+
+        this.x = x;
+        this.y = y;
+        this.dx = dx;
+        this.dy = dy;
+        this.radius = radius;
+        this.fillColor = "red";
+        this.strokeColor = "gray";
+    }
+
+    var toplar = [];
+    var canvas, context;
+
+    function alanOlustur() {
+
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        for (var i = 0; i < toplar.length; i++) {
+            var top = toplar[i];
+            top.x += top.dx;
+            top.y += top.dy;
+            if ((top.x + top.radius+ top.radius) >= canvas.width || (top.x - top.radius) <= 0) {
+                top.dx = -top.dx;
+            }
+
+            if ((top.y + top.radius) >= canvas.height || (top.y - top.radius) <= 0) {
+                top.dy = -top.dy;
+            }
+
+            context.beginPath();
+            context.fillStyle = top.fillColor;
+            context.lineWidth = 1;
+            context.strokeStyle = top.strokeColor;
+            context.arc(top.x, top.y, top.radius, 0, Math.PI * 2);
+            context.fill();
+            context.stroke();
+        }
+        setTimeout('alanOlustur()', 20);
+    }
+
+
+    window.onload = function (ev) {
+        canvas = document.getElementById('oyun');
+        context = canvas.getContext("2d");
+        alanOlustur();
+    }
+
+    function topEkle() {
+
+        var rax = Math.floor(Math.random() * (1024 - 0 + 1)) + 0;
+        var ray = Math.floor(Math.random() * (150 - 0 + 1)) + 0;
+        console.log("x" + rax + ", y : " + ray);
+
+
+        var top = new Top(rax, ray, 1, 1, 10);
+        toplar.push(top);
+
+    }
+
+
+</script>
+
+</body>
+</html>

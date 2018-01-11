@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Olcumler</title>
+</head>
+<body>
+
+<input type="range" name="inpRange" id="nmb"
+       value="5"
+       max="1000"
+       min="5"
+       step="5"
+       onchange="degistir()"/>
+<br/>
+<br/>
+<progress max="100" value="45"></progress>
+
+<br/>
+<br/>
+
+<meter value="50" min="0" max="100" low="25" high="80" optimum="60"></meter>
+
+<span id="sayi"></span>
+<script>
+
+    function degistir() {
+        var deger = document.getElementById("nmb").value();
+        document.querySelector("meter").value = deger;
+        document.querySelector("#sayi").innerText = deger;
+        document.querySelector("progress").value = deger;
+    }
+
+</script>
+
+</body>
+</html>

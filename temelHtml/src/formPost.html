@@ -1,0 +1,78 @@
+<!--
+
+label içerisindeki verdiğimiz id, ilgili labele tıklanıldığında idsi verilen txt focuslar
+
+*reqiured alanı taracayının diline gore mesaji veriyor. Bunu js ile değiştirebiliriz
+
+* html5 ile ozellik type için color
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form method="post" action="/">
+
+    <label for="name">Adınız</label>
+
+    <input id="name" type="text" placeholder="adınız" name="name" value="" required>
+    <br/>
+
+
+    <input id="color" type="color" placeholder="favori renginiz" name="name" value="" required>
+    <br/>
+    <input type="text" placeholder="ülke" name="name" list="countries">
+    <datalist id="countries">
+
+        <option value="Türkiye">Türkiye</option>
+        <option value="Tunus">Tunus</option>
+        <option value="Türkmenistan">Türkmenistan</option>
+        <option value="Turk & Cactus Adası">Turk & Cactus Adası</option>
+    </datalist>
+
+    <br/>
+    <select>
+        <optgroup label="İç Anadolu Bölgesi">
+            <option label="Ankara" value="Ankara"></option>
+            <option label="Çorum" value="Çorum"></option>
+            <option label="Yozgat" value="Yozgat"></option>
+        </optgroup>
+
+        <optgroup label="Ege Bölgesi">
+            <option label="Denizli" value="Denizli"></option>
+            <option label="İzmir" value="İzmir"></option>
+            <option label="Aydın" value="Aydın"></option>
+        </optgroup>
+    </select>
+
+    <br/>
+    <br/>
+    <input type="email" required value="">
+    <br/>
+    <br/>
+    <input type="month" name="name" id="month">
+
+    <br/>
+    <br/>
+    <input type="datetime-local" name="name" id="datetime-local">
+
+    <br/>
+    <br/>
+    <input type="range" name="name" min="1" max="100"  step="1" id="range">
+
+
+    <br/>
+    <br/>
+    <input type="number" name="name" min="1" max="100"  step="1">
+
+
+    <br/>
+    <br/>
+    <input type="submit" name="name" value="Gönder">
+</form>
+</body>
+</html>

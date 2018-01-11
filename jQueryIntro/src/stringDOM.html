@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tatil</title>
+    <style>
+        .yorumlar {
+            display: none;
+        }
+
+        .bolge {
+            width: 200px;
+            height: 400px;
+            border-radius: 20px;
+            background-color: aquamarine;
+            float: left;
+            margin: 25px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        button {
+            width: 100%;
+            background-color: red;
+            color: white;
+            font-weight: bold;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div id="tatil">
+
+    <ul>
+        <!-- data- ile baslayan her seyi kendimiz alabilirz data('fiyat') seklinde alabiliriz -->
+        <li class="bolge" data-fiyat="1500">
+            <a href="#">content</a>
+            <h2>Karadeniz Turu</h2>
+
+
+            <ul class="yorumlar">
+
+                <li>Harika</li>
+                <li>Müthiş</li>
+
+            </ul>
+            <button>Fiyat</button>
+        </li>
+        <li class="bolge" data-fiyat="1800">
+            <a href="#">content</a>
+            <h2>Ege Turu</h2>
+
+
+            <ul class="yorumlar">
+
+                <li>Harika</li>
+                <li>Müthiş</li>
+
+            </ul>
+            <button>Fiyat</button>
+        </li>
+        <li class="bolge" data-fiyat="2000">
+            <a href="#">content</a>
+            <h2>Gap Turu</h2>
+
+
+            <ul class="yorumlar">
+
+                <li>Harika</li>
+                <li>Müthiş</li>
+
+            </ul>
+            <button>Fiyat</button>
+        </li>
+    </ul>
+</div>
+<script src="../js/vendor/jquery-3.2.1.min.js"></script>
+
+<script>
+
+    // $(document).ready(function () {
+    //     var fiyat = $('<p>1500TL</p>')
+    //     $('.bolge').append(fiyat);
+    //     $('button').remove();
+    // });
+
+
+    function fiyatGoster() {
+
+        var fiyat = $('<p>1500TL</p>')
+        $('.bolge').append(fiyat);
+        $('button').remove();
+
+    }
+
+    // $('button').on('click', function () {
+    //     fiyatGoster();
+    // });
+    //
+
+
+    // $('button').on('click', function () {
+    //     var closest = $(this).closest('.bolge');
+    //     var deger = closest.data('fiyat');
+    //     var fiyat = $('<p>' + deger + '</p>');
+    //     closest.append(fiyat);
+    //     $(this).remove();
+    //
+    // });
+
+    /**
+     * bolge classi icerisinde ki button tiklanildiginda calissin demek
+     */
+    $('.bolge').on('click', 'button', function () {
+        var closest = $(this).closest('.bolge');
+        var deger = closest.data('fiyat');
+        var fiyat = $('<p>' + deger + '</p>');
+        closest.append(fiyat);
+        $(this).remove();
+
+    });
+
+
+</script>
+
+</body>
+</html>

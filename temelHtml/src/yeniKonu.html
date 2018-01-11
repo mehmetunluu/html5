@@ -1,0 +1,80 @@
+<!--
+- isareti browser bazli ayırımları gosterir. css içerisindeki calismalar icin
+
+ms ie
+o opera
+moz mozilla
+webkit google chrome
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: silver;
+            border: 1px solid black;
+            padding: 10px;
+            border-radius: 25px;
+            box-shadow: 10px 10px 5px black;
+        }
+
+        .golge {
+            width: 300px;
+            height: 300px;
+            background-color: silver;
+            border: 1px solid black;
+            padding: 10px;
+            border-radius: 25px;
+            box-shadow: 10px 10px 5px black;
+            text-shadow: 10px 10px 4px red;
+        }
+
+        .gecis {
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            padding: 10px;
+            background: linear-gradient(top, orange, yellow, white);
+            background: -webkit-linear-gradient(top, orange, yellow, white);
+            background: -o-linear-gradient(top, orange, yellow, white);
+            background: -ms-linear-gradient(top, orange, yellow, white);
+            background: -moz-linear-gradient(top, orange, yellow, white);
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <p>Deneme</p>
+    <p>Deneme</p>
+    <p>Deneme</p>
+    <p>Deneme</p>
+    <p>Deneme</p>
+    <p>Deneme</p>
+    <p>Deneme</p>
+
+</div>
+<div class="golge">
+    <p>Deneme</p>
+    <p>Deneme</p>
+    <p>Deneme</p>
+    <p>Deneme</p>
+    <p>Deneme</p>
+    <p>Deneme</p>
+    <p>Deneme</p>
+</div>
+<div class="gecis">
+    <p>Deneme</p>
+    <p>Deneme</p>
+    <p>Deneme</p>
+    <p>Deneme</p>
+    <p>Deneme</p>
+    <p>Deneme</p>
+    <p>Deneme</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!--
+
+# ile baslayan stylerdan id yi etkiler.
+. ile baslayan stylelar classdir
+.menu ul li -> demek bu da menu classı altında ul tagı altındaki li tagını etkiler.
+^ ile baslayan
+* iceren anlamina gelir
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Selectors-->
+
+    <style>
+        div {
+            color: black;
+            font-size: 12px;
+            display: block;
+            margin: 5px, 3px, 2px, 1px;
+        }
+
+        .menu {
+            font-family: 'Trebuchet MS';
+        }
+
+        .menu ul {
+            list-style: none;
+        }
+
+        .menu ul li {
+            display: inline;
+        }
+
+        #myLink {
+            font-weight: bold;
+        }
+        a[href^="#"]{
+            text-decoration: none;
+            color: silver;
+            font-size: 30px;
+        }
+        a[href*="youtube"]{
+            color: pink;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+<!--
+marging dis bosluk
+pending iç bosluk
+-->
+
+</body>
+
+<div class="menu">
+
+    <ul>
+        <li>
+            <a href="#" id="myLink">HTML5</a>
+        </li>
+        <li>
+            <a href="#">CSS3</a>
+        </li>
+        <li>
+            <a href="#">JavaScript</a>
+        </li>
+        <li>
+            <a href="#">HTML5</a>
+        </li>
+        <li>
+            <a href="www.youtube.com">Hakkımızda</a>
+        </li>
+    </ul>
+</div>
+
+<div class="unmenu">
+
+    <ul>
+        <li>
+            A
+        </li>
+        <li>
+            A
+        </li>
+        <li>
+            A
+        </li>
+    </ul>
+</div>
+</html>

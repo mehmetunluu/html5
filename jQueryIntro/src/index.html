@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .secici {
+            color: red;
+        }
+
+        .gecici {
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>
+    Ne Yapmak İstersiniz
+
+</h1>
+
+<br/>
+
+<p> Bir sonraki maceranı planlayın...</p>
+
+<ul id="turlar">
+    <li> Bilecik</li>
+    <!--<li>-->
+    <ul id="yozgat">
+        <li>Çekerek</li>
+        <li>Surgun</li>
+    </ul>
+    <!--</li>-->
+    <li> Denizli</li>
+    <li class="kampanya"> Çorum</li>
+
+</ul>
+
+<script src="../js/vendor/jquery-3.2.1.min.js">
+</script>
+
+<script>
+
+    /**
+     * 1. Bul : Html dökümanı icersinde aranan element veya elementleri bulabilir
+     * 2. Degistir: Htmlin içerisini degistiriri
+     * 3. Dinle : Tüm eventleri dinler
+     * 4. Anima et: Sayfadaki içerikte animasyon effect yapabilirsiniz
+     * 5. Network : ajax işlemleri
+     */
+    /**
+     * tum objeler yuklendiginde
+     */
+    $(document).ready(function () {
+        $("h1").text('Nereye gitmek istersin gardas');
+        // $("li").text('Yozgat');
+        /**id uzerinden erisme**/
+        $("#turlar");
+        /**  > isareti sadece alt eleman anlamina gelmektedir.**/
+        $("#turlar > li").addClass('secici');
+        /**class uzerinden erisme**/
+        $(".kampanya").addClass('gecici');
+        $('#turlar li:first').text('New York')
+        /** TRAVERSING METOTLAR*/
+        $('#turlar').find('li');
+    })
+
+</script>
+
+</body>
+</html>
